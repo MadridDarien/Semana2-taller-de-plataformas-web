@@ -1,75 +1,51 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <title>Formulario Web</title>
+    <meta charset="UTF-8">
+    <title>DM Travel Agency</title>
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-  <h2>Formulario de contacto</h2>
+<header class="hero">
+    <h1>DM Travel Agency</h1>
+    <p>Tu próximo destino comienza aquí</p>
+    <a href="agencia.html" class="btn-primario">Solicitar viaje</a>
+</header>
 
-  <form id="formulario">
+<section class="destinos">
+    <h2>Destinos destacados</h2>
 
-    <label>Nombre:</label><br>
-    <input type="text" id="nombre"><br><br>
+    <div class="grid-destinos">
+        <div class="card">
+            <img src="imagenes/paris.jpg" alt="Cancún">
+            <h3>cancun</h3>
+        </div>
 
-    <label>Correo:</label><br>
-    <input type="email" id="correo"><br><br>
+        <div class="card">
+            <img src="imagenes/pertomontt.jpg" alt="París">
+            <h3>Puerto Montt</h3>
+        </div>
 
-    <label>Mensaje:</label><br>
-    <textarea id="mensaje">Saludos desde Puerto Montt, Darien Madrid.</textarea><br><br>
+        <div class="card">
+            <img src="imagenes/newyork.jpg" alt="Nueva York">
+            <h3>paris</h3>
+        </div>
+    </div>
+</section>
 
-    <button type="submit">Enviar</button>
+<section class="testimonios">
+    <h2>Testimonios</h2>
+    
+    </div>
+</section>
 
-  </form>
-
-  <script>
-
-    document.getElementById("formulario").addEventListener("submit", function(e) {
-
-      e.preventDefault();
-
-      let nombre = document.getElementById("nombre").value;
-      let correo = document.getElementById("correo").value;
-      let mensaje = document.getElementById("mensaje").value;
-
-      if (nombre === "" || correo === "" || mensaje === "") {
-        alert("Por favor, completa todos los campos");
-        return;
-      }
-
-      let formatoCorreo = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
-      if (!formatoCorreo.test(correo)) {
-        alert("Correo inválido");
-        return;
-      }
-
-      new Promise((resolve, reject) => {
-
-        setTimeout(() => {
-
-          let exito = Math.random() > 0.5;
-
-          if (exito) {
-            resolve("Formulario enviado correctamente");
-          } else {
-            reject("Error al enviar el formulario");
-          }
-
-        }, 2000);
-
-      })
-      .then((mensaje) => {
-        alert(mensaje);
-      })
-      .catch((error) => {
-        alert(error);
-      });
-
-    });
-
-  </script>
+<footer>
+    <p>DM Travel Agency © 2026</p>
+    <p>Teléfono: +56 9 1234 5678</p>
+    <p>Correo: contacto@dmtravel.cl</p>
+</footer>
 
 </body>
 </html>
